@@ -17,14 +17,14 @@ public enum Enum_Heap_Kind { case max, min }
 public struct Heap<Key: Equatable & Comparable> {
     public let kind: Enum_Heap_Kind
     public let comp: (Key, Key) -> Bool
-    // MARK: If you want it as ArraySlice, uncomment below
+    // MARK: If you want it as ArraySlice, uncomment the below
     //    public var keys: ArraySlice<Key> /// [Key]
     public var keys: [Key]
     
     public init(kind: Enum_Heap_Kind, keyType: Key.Type, compare: @escaping (Key, Key) -> Bool) {
         self.kind = kind
         self.comp = compare
-        // MARK: If you want it as ArraySlice, uncomment below
+        // MARK: If you want it as ArraySlice, uncomment the below
         //        self.keys = ArraySlice<Key>()
         self.keys = Array<Key>()
     }
@@ -44,7 +44,7 @@ public struct Heap<Key: Equatable & Comparable> {
         case .min:
             self.comp = { $0 < $1 }
         }
-        // MARK: If you want it as ArraySlice, uncomment below
+        // MARK: If you want it as ArraySlice, uncomment the below
         //        self.keys = ArraySlice<Key>() /// [Key]()
         self.keys = [Key]()
         
